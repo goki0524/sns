@@ -1,0 +1,45 @@
+<% provide(:title, current_user.name) %>
+<div class="row">
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+        <%= gravatar_for current_user %>
+        <%= current_user.name %>
+      </h1>
+    </section>
+    <section class="stats">
+      <%= render 'shared/stats' %>
+    </section>
+    
+    <span class="fa-icon new_message">
+    <i class="fa fa-envelope-o" aria-hidden="true">
+     <%= link_to "New Message", new_message_path %>
+    </i>
+    </span>
+</aside>
+
+  <div class="col-md-8">
+      <h3>Messages</h3>
+      <%= link_to "全てのメッセージ", all_messages_user_path(current_user) %> | 
+      <%= link_to "受信メッセージ", receive_messages_user_path(current_user) %> |
+      <%= link_to "送信メッセージ", sent_messages_user_path(current_user) %>
+      
+     <div class="message">
+      <% if @all_messages.any?%>
+        <p>全てのメッセージ</p>
+       <ol class="microposts">
+        <%= render @all_messages %>
+       </ol>
+      
+      <% else %>
+        <h3>メッセージはありません</h3>
+      <% end %>
+     </div>
+      
+  
+  </div>
+</div>
+
+
+
+

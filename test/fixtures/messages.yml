@@ -1,0 +1,24 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+orange:
+  message_content: "I just ate an orange!"
+  receiver_id: 2
+  created_at: <%= 10.minutes.ago %>
+  user: michael
+
+tau_manifesto:
+  message_content: "Check out the @tauday site by @mhartl: http://tauday.com"
+  receiver_id: 3
+  created_at: <%= 3.years.ago %>
+  user: michael
+
+cat_video:
+  message_content: "Sad cats are sad: http://youtu.be/PKffm2uI4dk"
+  receiver_id: 4
+  created_at: <%= 2.hours.ago %>
+  user: michael
+
+most_recent:
+  message_content: "Writing a short test"
+  receiver_id: 5
+  created_at: <%= Time.zone.now %>
+  user: michael

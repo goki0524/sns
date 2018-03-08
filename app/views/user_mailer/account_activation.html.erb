@@ -1,0 +1,10 @@
+<h1>サンプルアプリ</h1>
+
+<p>ようこそ <%= @user.name %> さん！</p>
+
+<p>
+アカウントを有効化にするために下記のリンクをクリックしてログインしてください。
+</p>
+
+<%= link_to "アカウントを有効化する", edit_account_activation_url(@user.activation_token,
+                                                    email: @user.email) %>

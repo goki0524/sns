@@ -1,0 +1,10 @@
+<h1>メッセージの通知</h1>
+
+
+<p><%= @target_user.name %>さん、<%= @user.name %>さんから新しいメッセージが届いています！</p>
+
+
+<%= link_to "メッセージを見てみる", receive_messages_user_url(@target_user) %>
+
+
+

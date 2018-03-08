@@ -1,0 +1,20 @@
+<% provide(:title, 'All users') %>
+<h1>ユーザー検索</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_tag users_path, :method => 'get' do %>
+      <%= text_field_tag :search, params[:search], placeholder: "ユーザー検索...", class: 'form-control' %>
+      <%= submit_tag "検索", :name => nil, class: "btn btn-primary"%>
+    <% end %>
+
+    <%= will_paginate %>
+
+    <ul class="users">
+    <%= render @users %>
+    </ul>
+
+    <%= will_paginate %>
+
+  </div>
+</div>

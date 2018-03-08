@@ -1,0 +1,27 @@
+
+
+<%= render 'shared/user_info'%>
+
+
+ 
+
+<%= form_for @message do |f| %>
+
+  <%= render 'shared/error_messages', object: f.object %>
+  
+  <div class="field">
+  <h3>TO:</h3>
+  <%#= f.select :receiver_id, [ ["a",1],["b",2],["c",3] ] %>
+  <%= f.select :receiver_id, @friends_aar %>
+  </div>
+  
+  <h3>メッセージ</h3>
+  <div class="field">
+    <%= f.text_area :message_content, placeholder: "新しいメッセージ..." %>
+  </div>
+  <%= f.submit "メッセージを送信", class: "btn btn-primary" %>
+  
+
+
+
+<% end %>
